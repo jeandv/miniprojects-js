@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 1 </title>
+</head>
+<body>
+    <!-- ejercicio 1 -->
+    <button value="Blue" onclick="cambiarColor(value)">Azul</button>
+    <button value="Green" onclick="cambiarColor(value)">Verde</button>
+    <button value="Yellow" onclick="cambiarColor(value)">Amarillo</button>
+    <button value="Gray" onclick="cambiarColor(value)">Gris</button>
+    <button value="Red" onclick="cambiarColor(value)">Rojo</button>
+    <button value="Purple" onclick="cambiarColor(value)">Morado</button>
+    <button value="Black" onclick="cambiarColor(value)">Negro</button>
+    <!-- ejercicio 2 -->
+    <button onclick="cambiarTitulo()">Cambiar el título</button>
+    <!-- ejercicio 4  -->
+    <button onclick="nuevaVentana()">Abrir nueva ventana</button>
+</body>
+<script>
+    //ejercicio 1
+    function cambiarColor(value) {
+        window.document.bgColor = value;
+    }
+    //ejercicio 2
+    function cambiarTitulo() {
+        do {
+            var cmbTitulo = prompt("Coloque un nuevo título:");
+            if (!(cmbTitulo == null))
+                window.document.title = cmbTitulo;
+        } while (cmbTitulo == null);
+    }
+    //ejercicio 4
+    function nuevaVentana() {
+        window.open("modal.html", "", "widht=50px, height=50px");
+    }
+</script>
+</html>

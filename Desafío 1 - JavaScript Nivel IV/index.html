@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="jquery.js"></script>
+  <script src="main.js"></script>
+  <!-- estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Desafio 1</title>
+</head>
+<body style="text-align: center; font-size: 0.9em;">
+  <!-- Objetivo 2 -->
+  <button class="btn" id="btnMostrarSeccion" style="margin: 0.5em 0 0.5em 0;">Consultar secciones de curso</button>
+  <!-- Objetivo 1 -->
+  <div>
+    <a href="#" id="btnCarreras" value="Carreras">Ver carreras</a>
+    <a href="#" id="btnCursos" value="Cursos">Ver cursos</a>
+  </div>
+  <div id="contenido"></div>
+  <!-- Objetivo 2 -->
+  <div class="container" id="mostrarSec" style="width: 100%;">
+    <h3>Cursos que estan por comenzar</h3>
+    <div class="section">
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Materia</th>
+            <th>Nro. sección</th>
+            <th>Dia inicio</th>
+            <th>Fecha de inicio</th>
+            <th>Fecha tentativa</th>
+            <th>Nivel</th>
+            <th>Estado</th>
+            <th>Ft</th>
+            <th>Codigo</th>
+            <th>Objetivo</th>
+            <th>Codigo nivel</th>
+            <th>Id. Curso</th>
+            <th>Modalidad</th>
+          </tr>
+        </thead>
+        <tbody id="res">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

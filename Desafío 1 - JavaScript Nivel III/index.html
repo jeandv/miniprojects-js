@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="main.js"></script>
+    <script src="seccion.js"></script>
+    <title>Desafio 1 | JavaScript Nivel 3</title>
+</head>
+<body>
+    <div>
+        <h1>Registro Alumnos CADIF1</h1>
+        <form name="form">
+            <input type="text" name="nombre">
+            <label>Nombre</label>
+            <input type="text" name="cedula">
+            <label>Cedula</label>
+            <input type="text" name="nota">
+            <label>Nota del desafio</label>
+            <input type="button" value="Registrar" name="btnReg">
+        </form>
+        <p>Curso</p><span id="nroSec"><b></b></span>
+        <p>Nombre del curso</p><span id="nombreCurso"><b></b></span>
+        <p>Promedio de la sección</p><span id="promSec"><b></b></span>
+        <table id="tablaDatos">
+            <tr>
+                <td>Nombre</td>
+                <td>Cedula</td>
+                <td>Nota</td>
+                <td>Promedio actual</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

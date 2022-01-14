@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3 | JavaScript</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Sistema de facturación</h1>
+    <form style="position: relative; left: 30%; width: 800px;" name="form">
+        <div style="margin: 20px; display: inline-block;">
+            <h2><b>Datos del cliente</b></h2>
+            Nombre<input style="margin: 1em 0 1em 2em;" type="text" name="nombre"> <br>
+            RIF <input style="margin: 1em 0 1em 4em;" type="text" name="rif"> <br>
+            Dirección <input style="margin: 1em;" type="text" name="direc">
+        </div>
+        <div style="margin: 20px; display: inline-block;">
+            <h2><b>Datos del artículo</b></h2>
+            Artículo<input style="margin: 1em 0 1em 1.5em;" type="text" name="articulo">
+            <input style="margin: 0 0 0 3em;" type="button" name="btnAgregar" value="Agregar"><br>
+            Precio <input style="margin: 1em 0 1em 2em;" type="number" name="precio" min="1"> <br>
+            Cantidad <input style="margin: 1em;" type="number" name="cantidad" min="1">
+        </div>
+    </form>
+    <h1 style="text-align: center;">Factura</h1>
+    <table style="position: relative; left: 38%; text-align: center;" id="tablaDatos">
+        <tr>
+            <td style="border: solid 1px; padding: 3px;"><b>Producto</b></td>
+            <td style="border: solid 1px; padding: 3px;"><b>Precio</b></td>
+            <td style="border: solid 1px; padding: 3px;"><b>Cantidad</b></td>
+            <td style="border: solid 1px; padding: 3px;"><b>Sub total del artículo</b></td>
+            <td style="border: solid 1px; padding: 3px;"></td>
+        </tr>
+    </table>
+    <div style="margin: 20px; padding: 3em; position: relative; left: 38%; width: 400px;" name="montos">
+        Sub total <input style=" margin: 1em 0 1em 2.3em;" type="text" id="sumSubTotal" readonly> <br>
+        IVA (16%) <input style="margin: 1em 0 1em 1.2em;" type="text" id="iva" readonly> <br>
+        Monto total <input style="margin: 1em;" type="text" id="montoTotal" readonly> <br>
+        <input style="margin: 1em 0 0 7em;" type="button" id="btnTerminar" value="Terminar">
+    </div>
+</body>
+<script>
+    //Objetivo 1
+    window.onload = () => {
+
+        let btnAgregar = document.getElementsByName("btnAgregar")[0]
+        let tabla = document.getElementById("tablaDatos");
+        let total = 0;
+
+        btnAgregar.onclick = () => {
+
+            if (!inputVacio(document.form.nombre, "Debe colocar su nombre"))
+                if (!inputVacio(document.form.rif, "Debe colocar su RIF"))
+                    if (!inputVacio(document.form.direc, "Debe colocar su dirección"))
+                        if (!inputVacio(document.form.articulo, "Debe colocar el articulo que quiera comprar"))
+                            if (!inputVacio(document.form.precio, "Debe colocar el precio del articulo"))
+                                if (!inputVacio(document.form.cantidad, "Debe colocar cuantos quiere")) {
+
+                                    let fila = tabla.insertRow(-1);
+
+                                    let celda = fila.insertCell(-1);
+                                    celda.innerHTML = document.form.articulo.value;
+
+                                    celda = fila.insertCell(-1);
+                                    let precioArt = document.form.precio.value;
+                                    celda.innerHTML = `${precioArt} Bs.`;
+
+                                    celda = fila.insertCell(-1);
+                                    let cantArt = document.form.cantidad.value
+                                    celda.innerHTML = cantArt;
+
+                                    //Objetivo 2
+                                    celda = fila.insertCell(-1);
+                                    let subTotal = precioArt * cantArt;
+                                    celda.innerHTML = `${subTotal} Bs.`;
+                                    subTotal = parseFloat(subTotal);
+
+                                    //Objetivo 3
+                                    total += subTotal;
+                                    document.getElementById("sumSubTotal").value = `${parseInt(total)} Bs.`;
+
+                                    let montoIva = total * 0.16;
+                                    document.getElementById("iva").value = `${parseInt(montoIva).toFixed(2)} Bs.`;
+
+                                    montoTotal = total + montoIva;
+                                    document.getElementById("montoTotal").value = `${parseInt(montoTotal).toFixed(2)} Bs.`;
+
+                                    //Objetivo 4
+                                    celda = fila.insertCell(-1);
+                                    celda.innerHTML = `<input type="button" value="Eliminar" id="btnEliminar">`;
+
+                                    var x, t = document.getElementById("tablaDatos");
+
+                                    for (let i = 0; i < t.rows.length; i++) {
+
+                                        t.rows[i].cells[4].onclick = function () {
+
+                                            total -= subTotal;
+                                            document.getElementById("sumSubTotal").value = `${parseInt(total)} Bs.`;
+
+                                            montoIva = total * 0.16;
+                                            document.getElementById("iva").value = `${parseInt(montoIva).toFixed(2)} Bs.`;
+
+                                            montoTotal = total + montoIva;
+                                            document.getElementById("montoTotal").value = `${parseInt(montoTotal).toFixed(2)} Bs.`;
+
+                                            x = this.parentElement.rowIndex;
+                                            t.deleteRow(x);
+                                        }
+                                    }
+                                }
+        }
+
+        //Objetivo 5
+        document.getElementById("btnTerminar").addEventListener("click", () => {
+
+            let x = confirm("Desea terminar la compra?");
+
+            if (x == true)
+                if (!inputVacio(document.form.nombre, "Debe colocar su nombre"))
+                    if (!inputVacio(document.form.rif, "Debe colocar su RIF"))
+                        if (!inputVacio(document.form.direc, "Debe colocar su dirección"))
+                            if (!inputVacio(document.form.articulo, "Debe colocar el articulo que quiera comprar"))
+                                if (!inputVacio(document.form.precio, "Debe colocar el precio del articulo"))
+                                    if (!inputVacio(document.form.cantidad, "Debe colocar cuantos quiere")) {
+
+                                        document.form.nombre.value = "";
+                                        document.form.rif.value = "";
+                                        document.form.direc.value = "";
+                                        document.form.articulo.value = "";
+                                        document.form.precio.value = "";
+                                        document.form.cantidad.value = "";
+
+                                        document.getElementById("sumSubTotal").value = "";
+                                        document.getElementById("iva").value = "";
+                                        document.getElementById("montoTotal").value = "";
+                                    }
+        });
+    }
+
+    function inputVacio(input, mensaje) {
+        if ((input.value.trim().length == 0) || (input.value <= 0)) {
+            alert(mensaje);
+            input.focus()
+            return true;
+        } else
+            return false;
+    }
+</script>
+</html>

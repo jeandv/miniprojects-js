@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-135deg, #7e2ebf, #4d4add)
+}
+body div:first-of-type {
+    background-color: #fff;
+    width: 50%;
+    height: 90vh;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+h1 {
+    text-align: center;
+    margin: 5px 0 20px 0;
+}
+input {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    border-bottom: 2px solid silver;
+    margin: 8px 0 5px 0;
+}
+label {
+    color: grey;
+    pointer-events: none;
+    position: relative;
+    bottom: 60px;
+}
+form input:last-of-type {
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    background-color: #6260e6;
+    border-radius: 30px;
+    transition: all 500ms ease;
+}
+form input:last-of-type:hover {
+    background-color: #4846c0;
+    border-radius: 8px;
+    font-size: 1.1em;
+}
+p {
+    font-size: 1em;
+    margin: 5px 0 5px 0;
+    text-align: center;
+}
+span > p {
+    color: indigo;
+}
+#tablaDatos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0 8px 0;
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+}
+tr, td{
+    padding: 8px 10px 8px 10px;
+    border: solid 1px rgb(133, 131, 131);
+}

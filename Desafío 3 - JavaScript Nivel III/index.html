@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="js.cookie.min.js"></script>
+    <script src="main.js"></script>
+    <script src="seccion.js"></script>
+    <title>Desafio 3 | JavaScript Nivel 3</title>
+</head>
+<body>
+    <div id="datos">
+        <h1>Registro Alumnos CADIF1</h1>
+        <p id="usLog"></p>
+        <form name="form">
+            <input type="text" name="nombre">
+            <p>Nombre y apellido del alumno</p>
+            <input type="text" name="cedula" maxlength="8">
+            <p>Cedula de identidad del alumno</p>
+            <input type="text" name="sec">
+            <p class="sec-crs">Número de sección</p>
+            <input type="text" name="crs">
+            <p class="sec-crs">Nombre del curso</p>
+            <input type="text" name="nota1" id="nota" maxlength="3">
+            <p class="nts">Nota 1</p>
+            <input type="text" name="nota2" id="nota" maxlength="3">
+            <p class="nts">Nota 2</p>
+            <input type="text" name="nota3" id="nota" maxlength="3">
+            <p class="nts">Nota 3</p>
+            <input type="text" name="nota4" id="nota" maxlength="3">
+            <p class="nts">Nota 4</p>
+            <input class="btn" type="button" value="Agregar sección" name="btnSecc">
+            <input class="btn" type="button" value="Registrar" name="btnReg">
+        </form>
+        <table id="tablaDatos">
+            <tr>
+                <td>Nombre</td>
+                <td>Cedula</td>
+                <td>Nombre del curso</td>
+                <td>Nro curso</td>
+                <td>Nota 1</td>
+                <td>Nota 2</td>
+                <td>Nota 3</td>
+                <td>Nota 4</td>
+                <td>Promedio actual</td>
+                <td>Promedio sección</td>
+            </tr>
+        </table>
+        <input type="button" value="Cerrar Sesion" id="logout">
+    </div>
+    <div id="login">
+        <h3>login</h3>
+        <input type="text" id="usu" placeholder="Usuario">
+        <input type="text" id="pass" placeholder="Contraseña">
+        <input type="button" value="Iniciar Sesión" id="btnLogin">
+    </div>
+    <input type="button" value="Borrar Cookies" id="ReiEliCookies">
+</body>
+</html>

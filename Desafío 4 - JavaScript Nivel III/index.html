@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/icons8-saitama-48.png" />
+    <link rel="stylesheet" href="estilos.css">
+    <title>Juego de memoria</title>
+</head>
+<body name="pagJuego">
+    <img class="tituloImg" src="img/tituloOne.png">
+    <div>
+        <div id="tiempo">
+            tiempo <br>
+            00:00:00.000
+        </div>
+        <p id="contador">contador: 0/8</p>
+        <button class="boton jugar" id="btnJugar"><span>jugar!</span></button>
+        <p id="acierto"></p>
+        <p id="win"></p>
+    </div>
+    <section class="juego" id="juegoMemoria">
+        <div class="carta" data-name="ninja">
+            <img class="imgFrontal" src="img/ninja.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+        <div class="carta" data-name="ninja">
+            <img class="imgFrontal" src="img/ninja.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+
+        <div class="carta" data-name="sai">
+            <img class="imgFrontal" src="img/pelon.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+        <div class="carta" data-name="sai">
+            <img class="imgFrontal" src="img/pelon.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+
+        <div class="carta" data-name="flashy">
+            <img class="imgFrontal" src="img/flashy.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+        <div class="carta" data-name="flashy">
+            <img class="imgFrontal" src="img/flashy.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+
+        <div class="carta" data-name="king">
+            <img class="imgFrontal" src="img/king.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+        <div class="carta" data-name="king">
+            <img class="imgFrontal" src="img/king.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+
+        <div class="carta" data-name="genos">
+            <img class="imgFrontal" src="img/genos.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+        <div class="carta" data-name="genos">
+            <img class="imgFrontal" src="img/genos.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+
+        <div class="carta" data-name="garou">
+            <img class="imgFrontal" src="img/garou.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+        <div class="carta" data-name="garou">
+            <img class="imgFrontal" src="img/garou.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+
+        <div class="carta" data-name="fubuki">
+            <img class="imgFrontal" src="img/fubuki.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+        <div class="carta" data-name="fubuki">
+            <img class="imgFrontal" src="img/fubuki.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+
+        <div class="carta" data-name="bang">
+            <img class="imgFrontal" src="img/bang.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+        <div class="carta" data-name="bang">
+            <img class="imgFrontal" src="img/bang.png">
+            <img class="imgAtras" src="img/punch.png">
+        </div>
+    </section>
+</body>
+<script src="jquery-3.6.0.min.js"></script>
+<script src="main.js"></script>
+</html>

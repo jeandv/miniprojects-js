@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 1</title>
+</head>
+<body id="body" onload="cambiarTamaño()">
+    <!-- ejercicio 5 -->
+    <button onclick="verificarConexion()">Verificar conexión</button>
+</body>
+<script>
+    //ejercicio 3
+    function cambiarTamaño() {
+        var width = screen.width * 0.35;
+        var height = screen.height * 0.50;
+        window.resizeTo(width, height);
+        window.moveTo(((screen.width - width) / 2), ((screen.height - height) / 2));
+    }
+    // ejercicio 5
+    function verificarConexion() {
+        if (window.navigator.onLine) {
+            document.title = "Hay conexion";
+            document.getElementById("body").innerHTML = "<h1>Hay conexión</h1>";
+        } else {
+            alert("Se ha caído la conexion. No esta en linea");
+            window.close()
+        }
+    }
+</script>
+</html>
