@@ -1,0 +1,23 @@
+{
+    "curso":"Java Script",
+    "nivel":3,
+    "numero":3632,
+    "asesor":{
+        "nombre":"jose rojas",
+        "correo":"joselrojasd@gmail.com"
+    },
+    "alumnos":[
+        {
+            "nombre":"Danieli Sosa",
+            "fechaInscrion":{
+                "dia":1
+            }
+        },
+        {   
+            "nombre":"Alex Alarcon",
+            "fechaInscrion":{
+                "dia":15   
+            }
+        }
+    ]
+}
